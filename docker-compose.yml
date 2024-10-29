@@ -1,0 +1,17 @@
+services:
+  awesome-videotube-downloader-api:
+    image: awesome-videotube-downloader-api
+    container_name: awesome-videotube-downloader-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    volumes:
+      - /opt/awesome-videotube-downloader-api:/opt/awesome-videotube-downloader-api
+    networks:
+      - awesome-videotube-downloader-network
+networks:
+  awesome-videotube-downloader-network:
+    driver: bridge
+    name: awesome-videotube-downloader-network
